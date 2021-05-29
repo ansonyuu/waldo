@@ -2,6 +2,7 @@ import React from "react";
 import { InfoWindow } from "@react-google-maps/api";
 import { formatRelative, parseISO } from "date-fns";
 
+//component that provides popup of details when pressed
 export default function AlertWindow({ selected, close }) {
   return (
     <InfoWindow

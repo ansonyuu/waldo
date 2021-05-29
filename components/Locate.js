@@ -1,5 +1,6 @@
 import React from "react";
 
+//component that pans map to device's current location after pressing button
 function Locate({ panTo }) {
   return (
     <button

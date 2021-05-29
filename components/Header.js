@@ -1,5 +1,6 @@
 import React from "react";
 
+//component that overlays map with app title
 export default function Header() {
   return (
     <h1>

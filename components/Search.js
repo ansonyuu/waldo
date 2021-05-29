@@ -11,6 +11,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 
+//component that uses Google Geolocation API to give search, suggest, and pan to inputted location
 function Search({ panTo }) {
   // deconstructing variables from Places library
   const {
@@ -33,11 +34,13 @@ function Search({ panTo }) {
     setValue(e.target.value);
   };
 
+  //function to clear suggestions and display searched location in input bar after panning
   const handleSelect = async (address) => {
     setValue(address, false);
     clearSuggestions();
 
     try {
+      //get geocode for searched address from places autocomplete
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
       panTo({ lat, lng });

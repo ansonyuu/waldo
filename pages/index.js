@@ -1,11 +1,5 @@
 import React, { useState, useCallback, useRef } from "react";
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  withScriptjs,
-  withGoogleMap,
-} from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { formatRelative } from "date-fns";
 import { Search, Locate, AlertWindow, Header } from "../components";
 
@@ -51,9 +45,10 @@ export default function App() {
     mapRef.current = map;
   }, []);
 
+  // only creates one of these functions
   const panTo = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(14);
+    mapRef.current.setZoom(16);
   }, []);
 
   if (loadError) return "Error";
@@ -83,7 +78,7 @@ export default function App() {
               setSelected(marker);
             }}
             icon={{
-              url: `/vercel.svg`,
+              url: `/hat.svg`,
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),
