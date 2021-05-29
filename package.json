@@ -1,0 +1,21 @@
+{
+  "name": "waldo-scratch",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@reach/combobox": "^0.15.1",
+    "@react-google-maps/api": "^2.2.0",
+    "date-fns": "^2.22.1",
+    "google-maps-react": "2.0.6",
+    "next": "10.2.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-google-maps": "^9.4.5",
+    "use-places-autocomplete": "^1.9.3"
+  }
+}
