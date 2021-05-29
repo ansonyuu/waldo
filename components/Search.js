@@ -12,14 +12,16 @@ import {
 } from "@reach/combobox";
 
 function Search({ panTo }) {
+  // deconstructing variables from Places library
   const {
-    ready,
-    value,
-    suggestions: { status, data },
-    setValue,
-    clearSuggestions,
+    ready, //state
+    value, //input value from user
+    suggestions: { status, data }, // from Google API
+    setValue, // function to set value
+    clearSuggestions, //function to clear suggestions
   } = usePlacesAutocomplete({
     requestOptions: {
+      //TODO: location preference based off of where the user currently is
       location: { lat: () => 43.6532, lng: () => -79.3832 },
       radius: 100 * 1000,
     },
@@ -47,6 +49,7 @@ function Search({ panTo }) {
   return (
     <div className="search">
       <Combobox onSelect={handleSelect}>
+        {/* Component for text input */}
         <ComboboxInput
           value={value}
           onChange={handleInput}
@@ -54,6 +57,7 @@ function Search({ panTo }) {
           placeholder="Search your location"
         />
         <ComboboxPopover>
+          {/* Component for suggestion list */}
           <ComboboxList>
             {status === "OK" &&
               data.map(({ id, description }) => (
